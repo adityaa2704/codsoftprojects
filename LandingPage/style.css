@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tektur:wdth,wght@93.5,400..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.roboto-mono-uniquifier {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.tektur-uniquifier {
+  font-family: "Tektur", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  /* font-variation-settings: "wdth" 100; */
+}
+header {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url("./background.jpg");
+  background-size: cover;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  color: rgb(191, 189, 189);
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  position: relative;
+}
+
+.menu a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-bottom: 2px solid indianred;
+  transition: 0.4s linear;
+}
+
+.menu a:hover::before {
+  width: 90%;
+}
+
+.register a {
+  background-color: red;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.register a:hover {
+  background-color: transparent;
+  border: 1px soild indianred;
+}
+
+.h-txt {
+  max-width: 650px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.h-txt span {
+  letter-spacing: 5px;
+}
+
+.h-txt h1 {
+  font-size: 3.5em;
+}
+
+.h-txt a {
+  text-decoration: none;
+  background: indianred;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 5px;
+  transition: 0.4s;
+}
+
+.h-txt a:hover {
+  background-color: transparent;
+  border: 1px soild indianred;
+}
