@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #content {
+        align-items: center;
+        /* display: flex; */
+        /* flex-direction: column; */
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="content">
+      <h1>Number guessing game</h1>
+      <input type="number" id="box" /><br /><br />
+      <input type="submit" id="submit" value="submit game" />
+      <p>previous guesses:<span id="guessses"></span></p>
+      <p>Total Number of guesses left: <span id="left">10</span></p>
+    </div>
+    <script>
+      let input = document.getElementById("box");
+      let guessses = document.getElementById("guessses");
+      let btn = document.getElementById("submit");
+      let attempt = document.getElementById("left");
+      let result = document.createElement("p");
+      result.textContent = "Hello World";
+      document.body.appendChild(result);
+      result.style.textAlign = "center";
+      let attemptsLeft = 10;
+      let number = Math.floor(Math.random() * 100) + 1;
+
+      console.log(number);
+      let prevGuess = [];
+
+      btn.addEventListener("click", () => {
+        let userGuess = Number(input.value);
+
+        if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+          alert("Please enter number between 1 and 100");
+          input.value = "";
+          return;
+        }
+
+        prevGuess.push(userGuess);
+        guessses.textContent += userGuess + " ";
+
+        if (userGuess === number) {
+          alert("🎉 Correct Guess!");
+        } else if (userGuess < number) {
+          result.textContent = "number is less";
+        } else if (userGuess > number) {
+          result.textContent = "number is greater";
+        }
+
+        attemptsLeft--;
+        attempt.textContent = attemptsLeft;
+
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
